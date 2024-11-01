@@ -44,15 +44,7 @@ module.exports.registerService = async (body) => {
       pool.execute("INSERT INTO room_chat (room_id) VALUES (?)", [roomId]),
       pool.execute(
         "INSERT INTO users (user_id, username, email, password, avatar, cart_id, room_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [
-          userId,
-          body.username,
-          body.email,
-          hashed,
-          body.avatar || "",
-          cartId,
-          roomId,
-        ]
+        [userId, body.username, body.email, hashed, "", cartId, roomId]
       ),
     ]);
 
