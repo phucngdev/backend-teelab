@@ -19,7 +19,11 @@ app.use(bodyParser.json()); // chuyển body thành dạng json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://teelab-v1.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://teelab-v1.vercel.app",
+      "https://frontend-teelab.vercel.app",
+    ],
     credentials: true,
   })
 ); // cho phép truy cập
